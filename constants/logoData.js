@@ -1,0 +1,42 @@
+export const logoData = [
+    {
+        path: "/img/apple-white.png",
+        alt: "apple logo",
+        href: "https://podcasts.apple.com/us/podcast/existence/id1636717921",
+        key: "appl",
+        tailwindCSS: "relative w-[50px] h-[50px]",
+        required: true,
+    },
+    {
+        path: "/img/spotify-white.png",
+        alt: "spotify logo",
+        href: "https://open.spotify.com/show/1lKHRsuf2qen2PlnkjEFNV?si=7c44632705e64f66",
+        key: "spot",
+        tailwindCSS: "relative w-[50px] h-[50px]",
+        required: true,
+    },
+    {
+        path: "/img/youtube-white.png",
+        alt: "youtube logo",
+        href: "https://www.youtube.com/@ExistencePod",
+        key: "yt",
+        tailwindCSS: "relative w-[50px] h-[50px]",
+        required: true,
+    },
+    {
+        path: "/img/discord-white.png",
+        alt: "discord logo",
+        href: "",
+        key: "discord",
+        tailwindCSS: "relative w-[50px] h-[50px] hidden md:block",
+        required: false,
+    },
+    {
+        path: "/img/instagram-white.png",
+        alt: "instagram logo",
+        href: "https://www.instagram.com/existencepod/",
+        key: "ig",
+        tailwindCSS: "relative w-[50px] h-[50px] hidden md:block",
+        required: false,
+    },
+]
