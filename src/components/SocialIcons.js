@@ -5,7 +5,6 @@ export default function SocialIcons({ vertical }) {
     // Deep copy logoData
     let logos = JSON.parse(JSON.stringify(logoData))
 
-    console.log(vertical)
     if (vertical) {
         logos = logos.filter(data => {
             return data.required
