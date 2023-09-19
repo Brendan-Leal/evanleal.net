@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --cinema-black: #080D06;
+    --off-white: #F4F4FD;
+}
+
+
+body {
+    background-color: var(--cinema-black);
+    color: var(--off-white);
+}
