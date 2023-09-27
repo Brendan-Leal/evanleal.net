@@ -19,15 +19,11 @@ export default function App({ Component, pageProps }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
+    <div className={`${sultan.variable} ${unna.variable}`}>
       <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <main
-        className={`${sultan.variable} ${unna.variable} ${
-          menuOpen ? "hidden" : null
-        }`}
-      >
+      <main className={` ${menuOpen ? "hidden overflow-hidden" : null}`}>
         <Component {...pageProps} />
       </main>
-    </>
+    </div>
   );
 }
