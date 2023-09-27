@@ -1,16 +1,18 @@
-import Hero from "@/components/Hero"
-import Nav from "@/components/Nav"
-import Footer from "@/components/Footer"
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <div className="relative">
-        <Nav />
         <Hero />
 
         <div className="md:py-12 bg-black">
-          <video className="object-fill md:hidden h-[100dvh]" width="100%" controls={true} >
+          <video
+            className="object-fill md:hidden h-[100dvh]"
+            width="100%"
+            controls={true}
+          >
             <source src="/videos/mobile-trailer.mp4" />
           </video>
 
@@ -26,7 +28,8 @@ export default function Home() {
 
           <div className="flex-col">
             <p>
-              &quot;The mystery of human existence lies not in just staying alive, but in finding something to live for.&quot;
+              &quot;The mystery of human existence lies not in just staying
+              alive, but in finding something to live for.&quot;
             </p>
             <p>- Fyodor Dostoyevsky</p>
           </div>
@@ -34,6 +37,5 @@ export default function Home() {
       </div>
       <Footer />
     </>
-
-  )
+  );
 }
