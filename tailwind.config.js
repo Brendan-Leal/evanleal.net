@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     fontSize: {
@@ -25,8 +25,8 @@ module.exports = {
         "desktop-3xl": "101.75px",
       },
       fontFamily: {
-        sultan: ['var(--font-sultan)'],
-        unna: ["var(--font-unna)"]
+        sultan: ["var(--font-sultan)"],
+        unna: ["var(--font-unna)"],
       },
       colors: {
         "cinema-black": "#080D06",
@@ -37,9 +37,9 @@ module.exports = {
       },
       backgroundImage: {
         "homepage-hero-mobile": "url('/img/pod-in-park-mobile.png')",
-        "homepage-hero": "url('/img/pod-in-park.png')"
-      }
-    }
+        "homepage-hero": "url('/img/pod-in-park.png')",
+      },
+    },
   },
   plugins: [],
-}
+};
