@@ -12,6 +12,7 @@ export default function About() {
         headingText="About Evan"
         bgImg="/img/about-heading-img.png"
         alt="Evan in a bed of flowers"
+        imgPosition="object-bottom"
       />
     </>
   );

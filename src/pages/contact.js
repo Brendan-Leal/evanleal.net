@@ -12,6 +12,7 @@ export default function Contact() {
         headingText="Contact"
         bgImg="/img/contact-heading-img.png"
         alt="evan connecting with someone"
+        imgPosition="object-[bottom_right]"
       />
     </>
   );

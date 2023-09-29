@@ -12,7 +12,7 @@ export default function Podcast() {
         pageTitle="Existence Podcast"
         headingText="Existence"
         bgImg="/img/podcast-header-img.png"
-        position="80%"
+        imgPosition="object-[80%_top]"
         alt="Evan podcasting"
       />
     </>
