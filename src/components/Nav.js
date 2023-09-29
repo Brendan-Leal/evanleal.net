@@ -9,7 +9,7 @@ export default function Nav({ menuOpen, setMenuOpen }) {
     <div>
       <div
         onClick={toggleMenu}
-        className={`absolute z-10 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden ${
+        className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden ${
           menuOpen ? "hidden" : ""
         }`}
       >
