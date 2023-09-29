@@ -1,3 +1,18 @@
+import Heading from "@/components/Heading";
+import Head from "next/head";
+
 export default function Contact() {
-  return <h2>Contact</h2>;
+  return (
+    <>
+      <Head>
+        <title>Contact</title>
+      </Head>
+      <Heading
+        pageTitle="Contact"
+        headingText="Contact"
+        bgImg="/img/contact-heading-img.png"
+        alt="evan connecting with someone"
+      />
+    </>
+  );
 }
