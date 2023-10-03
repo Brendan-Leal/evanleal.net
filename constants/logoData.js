@@ -5,7 +5,7 @@ export const logoData = [
     alt: "spotify logo",
     href: "https://open.spotify.com/show/1lKHRsuf2qen2PlnkjEFNV?si=7c44632705e64f66",
     key: "spot",
-    required: true,
+    tailwindCSS: "block",
   },
   {
     lightFilePath: "/img/youtube-white.png",
@@ -13,7 +13,6 @@ export const logoData = [
     alt: "youtube logo",
     href: "https://www.youtube.com/@ExistencePod",
     key: "yt",
-    required: true,
   },
   {
     lightFilePath: "/img/apple-white.png",
@@ -21,7 +20,6 @@ export const logoData = [
     alt: "apple logo",
     href: "https://podcasts.apple.com/us/podcast/existence/id1636717921",
     key: "appl",
-    required: true,
   },
   {
     // TODO: Get discord URL
@@ -31,7 +29,6 @@ export const logoData = [
     href: "",
     key: "discord",
     tailwindCSS: "hidden md:block",
-    required: false,
   },
   {
     lightFilePath: "/img/instagram-white.png",
@@ -40,6 +37,5 @@ export const logoData = [
     href: "https://www.instagram.com/existencepod/",
     key: "ig",
     tailwindCSS: "hidden md:block",
-    required: false,
   },
 ];
