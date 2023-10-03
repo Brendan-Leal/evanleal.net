@@ -6,16 +6,13 @@ export default function SocialIcons({
   dark = false,
   showFullSet = false,
 }) {
-  // Deep copy logoData
-  let logos = JSON.parse(JSON.stringify(logoData));
-
   return (
     <div
       className={`flex ${
         vertical ? "flex-col" : "flex-row"
       } items-center justify-around`}
     >
-      {logos.map((data) => (
+      {logoData.map((data) => (
         <Logo
           key={data.key}
           src={`${dark ? data.darkFilePath : data.lightFilePath}`}
