@@ -3,7 +3,7 @@ import Link from "next/link";
 import { NAV_LINKS } from "../../constants/navLink";
 import SocialIcons from "./SocialIcons";
 
-export default function Menu({ toggleMenu, menuOpen }) {
+export default function MobileMenu({ toggleMenu, menuOpen }) {
   return (
     <div
       className={`${
@@ -12,7 +12,7 @@ export default function Menu({ toggleMenu, menuOpen }) {
     >
       <div
         onClick={toggleMenu}
-        className="absolute w-[40px] h-[40px] right-4 top-4"
+        className="absolute w-[40px] h-[40px] right-4 top-4 md:hidden"
       >
         <Image src="/img/dismiss.png" alt="" fill={true} />
       </div>
