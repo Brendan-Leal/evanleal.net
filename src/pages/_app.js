@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
   return (
     <div className={`${sultan.variable} ${unna.variable}`}>
       <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <main className={` ${menuOpen ? "hidden overflow-hidden" : null}`}>
+      <main className={`${menuOpen ? "hidden overflow-hidden" : ""}`}>
         <Component {...pageProps} />
       </main>
     </div>
