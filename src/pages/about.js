@@ -32,13 +32,14 @@ export default function About() {
           </div>
           <p className="text-base md:text-desktop-base md:w-2/3">
             I simply love genuine people and engaging conversation. So whether
-            you're a guest on the podcast, seeking a skillful editor, or just
-            looking to connect, my interests lie in collaborating with friendly,
-            like-minded people in pursuit of producing beautiful and captivating
-            work. Over the years I've fostered the knowledge, expertise &
-            equipment with the purpose of crafting high quality, meaningful and
-            artistically distinct content. Experienced in directing, editing,
-            sounds design and overall podcast & film production.
+            you&apos;re a guest on the podcast, seeking a skillful editor, or
+            just looking to connect, my interests lie in collaborating with
+            friendly, like-minded people in pursuit of producing beautiful and
+            captivating work. Over the years I&apos;ve fostered the knowledge,
+            expertise & equipment with the purpose of crafting high quality,
+            meaningful and artistically distinct content. Experienced in
+            directing, editing, sounds design and overall podcast & film
+            production.
           </p>
         </div>
 
