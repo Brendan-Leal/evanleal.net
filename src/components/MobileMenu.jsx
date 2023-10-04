@@ -5,11 +5,7 @@ import SocialIcons from "./SocialIcons";
 
 export default function MobileMenu({ toggleMenu, menuOpen }) {
   return (
-    <div
-      className={`${
-        menuOpen ? "flex" : "hidden"
-      } bg-off-white w-screen h-screen text-cinema-black flex-col justify-between`}
-    >
+    <div className="bg-off-white w-screen h-screen text-cinema-black flex flex-col justify-between ">
       <div
         onClick={toggleMenu}
         className="absolute w-[40px] h-[40px] right-4 top-4 md:hidden"
