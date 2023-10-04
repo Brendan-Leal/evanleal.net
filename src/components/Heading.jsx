@@ -4,7 +4,7 @@ export default function Heading({ headingText, bgImg, alt, imgPosition }) {
   return (
     <>
       <div className="relative h-[33dvh] md:h-[50vh] flex flex-col justify-end md:justify-start md:pt-16">
-        <div className="absolute z-10 w-screen h-full bg-gradient-to-t from-overlay-black opacity-50"></div>
+        <div className="absolute z-10 w-screen h-full bg-gradient-to-t from-overlay-black opacity-50 top-0"></div>
         <Image
           src={bgImg}
           fill={true}
