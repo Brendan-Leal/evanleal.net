@@ -1,3 +1,4 @@
+import { Transition } from "@headlessui/react";
 import MobileMenu from "./MobileMenu";
 import { NAV_LINKS } from "../../constants/navLink";
 import Link from "next/link";
@@ -18,6 +19,7 @@ export default function Nav({ menuOpen, setMenuOpen }) {
 
   return (
     <div>
+      {/* Hamburger Icon */}
       <div
         onClick={toggleMenu}
         className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden ${
@@ -27,7 +29,18 @@ export default function Nav({ menuOpen, setMenuOpen }) {
         <div className="w-12 h-1 bg-off-white rounded-lg"></div>
         <div className="w-6 h-1 bg-off-white rounded-lg"></div>
       </div>
-      <MobileMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
+
+      <Transition
+        show={menuOpen}
+        enter="transform transition cubic-bezier(.17,.67,.21,.26) duration-500"
+        enterFrom="translate-x-full"
+        enterTo="translate-x-0"
+        leave="transform transition cubic-bezier(.17,.67,.21,.26) duration-500"
+        leaveFrom="translate-x-0"
+        leaveTo="translate-x-full"
+      >
+        <MobileMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
+      </Transition>
       {/* Desktop Menu */}
       <div className="hidden md:block absolute z-20 ">
         <ul className="flex flex-row w-screen justify-center items-center gap-10 font-unna text-desktop-md pt-4">
