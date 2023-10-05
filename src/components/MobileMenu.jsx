@@ -5,7 +5,7 @@ import SocialIcons from "./SocialIcons";
 import { useContext } from "react";
 import { MenuContext } from "@/pages/_app";
 
-export default function MobileMenu() {
+export default function MobileMenu({ toggleFade }) {
   const menu = useContext(MenuContext);
 
   return (
@@ -19,7 +19,13 @@ export default function MobileMenu() {
       {/* Page links */}
       <ul className="text-2xl font-unna text-center flex flex-col gap-14 pt-[20dvh]">
         {NAV_LINKS.map((link) => (
-          <li key={link.key} onClick={menu.toggleMenu}>
+          <li
+            key={link.key}
+            onClick={() => {
+              menu.toggleMenu();
+              toggleFade();
+            }}
+          >
             <Link href={`${link.path}`}>{link.name}</Link>
           </li>
         ))}
