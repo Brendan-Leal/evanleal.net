@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Head from "next/head";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MenuContext } from "@/pages/_app";
 import { Transition } from "@headlessui/react";
+import { TRANSITION_TIME_CSS } from "../../constants/transitionTime";
 
 export default function Home() {
   const menu = useContext(MenuContext);
@@ -15,11 +16,10 @@ export default function Home() {
       </Head>
       <Transition
         show={menu.contentVisible}
-        // show={toggle}
-        enter="transition-opacity duration-1000"
+        enter={`transition-opacity ${TRANSITION_TIME_CSS}`}
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        leave="transition-opacity duration-1000"
+        leave={`transition-opacity ${TRANSITION_TIME_CSS}`}
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >

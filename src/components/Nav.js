@@ -5,6 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useContext } from "react";
 import { MenuContext } from "@/pages/_app";
+import {
+  TRANSITION_TIME_CSS,
+  TRANSITION_TIME_MS,
+} from "../../constants/transitionTime";
+
 export default function Nav() {
   const [spotifyImg, setSpotifyImg] = useState("/img/spotify-white.png");
 
@@ -12,35 +17,37 @@ export default function Nav() {
 
   const [appleImg, setAppleImg] = useState("/img/apple-white.png");
 
+  const [fadeCSS, setFadeCSS] = useState("");
+
   const menu = useContext(MenuContext);
 
   return (
     <>
-      <Transition
-        show={menu.contentVisible}
-        enter="transition-opacity duration-1000"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-1000"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+      {/* Hamburger Icon */}
+      <div
+        onClick={() => {
+          menu.toggleMenu();
+
+          if (fadeCSS.length > 1) {
+            setTimeout(() => {
+              setFadeCSS("");
+            }, TRANSITION_TIME_MS);
+          } else {
+            setFadeCSS("opacity-0");
+          }
+        }}
+        className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden transition-opacity ${TRANSITION_TIME_CSS} ${fadeCSS}`}
       >
-        {/* Hamburger Icon */}
-        <div
-          onClick={menu.toggleMenu}
-          className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden`}
-        >
-          <div className="w-12 h-1 bg-off-white rounded-lg"></div>
-          <div className="w-6 h-1 bg-off-white rounded-lg"></div>
-        </div>
-      </Transition>
+        <div className="w-12 h-1 bg-off-white rounded-lg"></div>
+        <div className="w-6 h-1 bg-off-white rounded-lg"></div>
+      </div>
 
       <Transition
         show={menu.menuOpen}
-        enter="transform transition cubic-bezier(.17,.67,.21,.26) duration-1000"
+        enter={`transform transition cubic-bezier(.17,.67,.21,.26) ${TRANSITION_TIME_CSS}`}
         enterFrom="translate-x-full"
         enterTo="translate-x-0"
-        leave="transform transition cubic-bezier(.17,.67,.21,.26) duration-1000"
+        leave={`transform transition cubic-bezier(.17,.67,.21,.26) ${TRANSITION_TIME_CSS}`}
         leaveFrom="translate-x-0"
         leaveTo="translate-x-full"
       >

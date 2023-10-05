@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import Nav from "@/components/Nav";
 import { useState, createContext } from "react";
+import { TRANSITION_TIME_MS } from "../../constants/transitionTime";
 
 import localFont from "next/font/local";
 const sultan = localFont({
@@ -26,12 +27,12 @@ export default function App({ Component, pageProps }) {
       setMenuOpen(!menuOpen);
       setTimeout(() => {
         setContentVisible(!contentVisible);
-      }, 1000);
+      }, TRANSITION_TIME_MS);
     } else {
       setContentVisible(!contentVisible);
       setTimeout(() => {
         setMenuOpen(!menuOpen);
-      }, 1000);
+      }, TRANSITION_TIME_MS);
     }
   };
 
