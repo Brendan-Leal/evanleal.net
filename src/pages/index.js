@@ -14,15 +14,6 @@ export default function Home() {
       <Head>
         <title>Home</title>
       </Head>
-      <Transition
-        show={menu.contentVisible}
-        enter={`transition-opacity ${TRANSITION_TIME_CSS}`}
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave={`transition-opacity ${TRANSITION_TIME_CSS}`}
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
         <div className="relative">
           <Hero />
           <video className="w-full h-[100dvh]">
@@ -42,7 +33,6 @@ export default function Home() {
           </div>
         </div>
         <Footer />
-      </Transition>
     </>
   );
 }
