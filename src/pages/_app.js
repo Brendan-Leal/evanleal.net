@@ -1,7 +1,11 @@
 import "@/styles/globals.css";
 import Nav from "@/components/Nav";
 import { useState, createContext } from "react";
-import { TRANSITION_TIME_MS } from "../../constants/transitionTime";
+import {
+  TRANSITION_TIME_MS,
+  TRANSITION_TIME_CSS,
+} from "../../constants/transitionTime";
+import { Transition } from "@headlessui/react";
 
 import localFont from "next/font/local";
 const sultan = localFont({
@@ -46,9 +50,20 @@ export default function App({ Component, pageProps }) {
         }}
       >
         <Nav />
-        <main>
-          <Component {...pageProps} />
-        </main>
+
+        <Transition
+          show={contentVisible}
+          enter={`transition-opacity ${TRANSITION_TIME_CSS}`}
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave={`transition-opacity ${TRANSITION_TIME_CSS}`}
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </Transition>
       </MenuContext.Provider>
     </div>
   );
