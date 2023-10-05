@@ -3,43 +3,48 @@ import MobileMenu from "./MobileMenu";
 import { NAV_LINKS } from "../../constants/navLink";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-useState;
-
-export default function Nav({ menuOpen, setMenuOpen }) {
+import { useState, useContext } from "react";
+import { MenuContext } from "@/pages/_app";
+export default function Nav() {
   const [spotifyImg, setSpotifyImg] = useState("/img/spotify-white.png");
 
   const [ytImg, setYoutubeImg] = useState("/img/youtube-white.png");
 
   const [appleImg, setAppleImg] = useState("/img/apple-white.png");
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const menu = useContext(MenuContext);
 
   return (
-    <div>
-      {/* Hamburger Icon */}
-      <div
-        onClick={toggleMenu}
-        className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden ${
-          menuOpen ? "hidden" : ""
-        }`}
+    <>
+      <Transition
+        show={menu.contentVisible}
+        enter="transition-opacity duration-1000"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-1000"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
       >
-        <div className="w-12 h-1 bg-off-white rounded-lg"></div>
-        <div className="w-6 h-1 bg-off-white rounded-lg"></div>
-      </div>
+        {/* Hamburger Icon */}
+        <div
+          onClick={menu.toggleMenu}
+          className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden`}
+        >
+          <div className="w-12 h-1 bg-off-white rounded-lg"></div>
+          <div className="w-6 h-1 bg-off-white rounded-lg"></div>
+        </div>
+      </Transition>
 
       <Transition
-        show={menuOpen}
-        enter="transform transition cubic-bezier(.17,.67,.21,.26) duration-500"
+        show={menu.menuOpen}
+        enter="transform transition cubic-bezier(.17,.67,.21,.26) duration-1000"
         enterFrom="translate-x-full"
         enterTo="translate-x-0"
-        leave="transform transition cubic-bezier(.17,.67,.21,.26) duration-500"
+        leave="transform transition cubic-bezier(.17,.67,.21,.26) duration-1000"
         leaveFrom="translate-x-0"
         leaveTo="translate-x-full"
       >
-        <MobileMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
+        <MobileMenu />
       </Transition>
       {/* Desktop Menu */}
       <div className="hidden md:block absolute z-20 ">
@@ -88,6 +93,6 @@ export default function Nav({ menuOpen, setMenuOpen }) {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 }
