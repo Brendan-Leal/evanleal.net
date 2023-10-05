@@ -21,21 +21,23 @@ export default function Nav() {
 
   const menu = useContext(MenuContext);
 
+  const toggleFade = () => {
+    menu.toggleMenu();
+
+    if (fadeCSS.length > 1) {
+      setTimeout(() => {
+        setFadeCSS("");
+      }, TRANSITION_TIME_MS);
+    } else {
+      setFadeCSS("opacity-0");
+    }
+  };
+
   return (
     <>
       {/* Hamburger Icon */}
       <div
-        onClick={() => {
-          menu.toggleMenu();
-
-          if (fadeCSS.length > 1) {
-            setTimeout(() => {
-              setFadeCSS("");
-            }, TRANSITION_TIME_MS);
-          } else {
-            setFadeCSS("opacity-0");
-          }
-        }}
+        onClick={toggleFade}
         className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden transition-opacity ${TRANSITION_TIME_CSS} ${fadeCSS}`}
       >
         <div className="w-12 h-1 bg-off-white rounded-lg"></div>
@@ -51,7 +53,7 @@ export default function Nav() {
         leaveFrom="translate-x-0"
         leaveTo="translate-x-full"
       >
-        <MobileMenu />
+        <MobileMenu toggleFade={toggleFade} />
       </Transition>
       {/* Desktop Menu */}
       <div className="hidden md:block absolute z-20 ">
