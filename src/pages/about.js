@@ -17,7 +17,7 @@ export default function About() {
       />
 
       <div className="font-unna mx-4 md:mx-20 my-2 md:my-6 text-center md:text-left ">
-        <h6 className="text-lg md:text-desktop-xl m-3">
+        <h6 className="text-lg md:text-desktop-lg my-3 lg:text-desktop-xl">
           Traveler. Thinker. Creative. Veteran.
         </h6>
         <div className="flex gap-6 ">
@@ -43,7 +43,7 @@ export default function About() {
           </p>
         </div>
 
-        <h6 className="text-lg md:text-desktop-xl m-3">
+        <h6 className="text-lg md:text-desktop-lg my-3 lg:text-desktop-xl">
           Host. Editor. Director. Producer.
         </h6>
         <div className="flex gap-6 ">
