@@ -18,7 +18,7 @@ export default function SocialIcons({
           src={`${dark ? data.darkFilePath : data.lightFilePath}`}
           alt={data.alt}
           url={data.href}
-          style={`${showFullSet ? "" : data.tailwindCSS}`}
+          className={`${showFullSet ? "" : data.tailwindCSS}`}
         />
       ))}
     </div>

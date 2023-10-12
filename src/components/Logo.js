@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-export default function Logo({ src, alt, url, style = null }) {
+export default function Logo({ src, alt, url, size = 50, className = null,  }) {
   return (
     <>
-      <div className={style}>
+      <div className={className}>
         <a href={url} target="_blank">
-          <Image src={src} width={50} height={50} alt={alt} />
+          <Image src={src} width={size} height={size} alt={alt} />
         </a>
       </div>
     </>
