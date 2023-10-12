@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
-import SocialIcons from "@/components/SocialIcons";
+import Logo from "@/components/Logo";
 import Head from "next/head";
 import Image from "next/image";
 const parseString = require("xml2js").parseString;
@@ -42,14 +42,14 @@ export default function Podcast({ rssData }) {
                 objectPosition="bottom right"
                 alt="existence podcast cover art"
               />
-            </a>
-            <p className="text-3xl lg:text-desktop-lg font-sultan font-bold text-title-red drop-shadow-[2px_2px_3px_#EF9F20] tracking-[1rem] md:tracking-[2rem] lg:tracking-[.5rem] absolute top-[10%] left-0 right-0 mx-auto text-center">
-              Existence
-            </p>
+              <p className="text-3xl md:text-4xl lg:text-desktop-lg font-sultan font-bold text-title-red drop-shadow-[2px_2px_3px_#EF9F20] tracking-[1rem] md:tracking-[2rem] lg:tracking-[.5rem] absolute top-[10%] left-0 right-0 mx-auto text-center">
+                Existence
+              </p>
 
-            <div className="relative bg-overlay-black opacity-80 w-full h-7 flex justify-center lg:hidden">
-              <p className="absolute z-50">{rssData.title}</p>
-            </div>
+              <div className="relative bg-overlay-black opacity-80 w-full h-7 md:h-12 flex justify-center items-center text-base md:text-lg lg:hidden">
+                <p className="absolute z-50">{rssData.title}</p>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -62,8 +62,29 @@ export default function Podcast({ rssData }) {
           <p className="text-base col-span-2">{rssData.description}</p>
         </div>
 
-        {/* FIXME: Only 3 icons here */}
-        <SocialIcons vertical />
+        <div className="lg:flex flex-col justify-between items-end hidden">
+          <Logo
+            src="/img/spotify-white.png"
+            alt=""
+            url="https://open.spotify.com/show/1lKHRsuf2qen2PlnkjEFNV?si=7c44632705e64f66"
+            size={40}
+            className="hover:scale-125 transition-transform"
+          />
+          <Logo
+            src="/img/youtube-white.png"
+            alt=""
+            url="https://www.youtube.com/@ExistencePod"
+            size={40}
+            className="hover:scale-125 transition-transform"
+          />
+          <Logo
+            src="/img/apple-white.png"
+            alt=""
+            url="https://podcasts.apple.com/us/podcast/existence/id1636717921"
+            size={40}
+            className="hover:scale-125 transition-transform"
+          />
+        </div>
         <h2 className="text-2xl col-span-full lg:hidden">Featured Episodes</h2>
 
         <div className="relative w-full pt-[50%] lg:col-start-1 lg:col-end-3">
