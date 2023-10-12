@@ -21,9 +21,81 @@ export default function Podcast({ rssData }) {
         alt="Evan podcasting"
       />
 
+      <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-auto font-unna p-4 text-center gap-4 max-w-xl md:max-w-3xl mx-auto">
+        <p className="text-base col-span-full lg:text-left">
+          Conversations contemplating the essence of what it means to exist &
+          pursue a life well-lived through discussions on love, death,
+          philosophy & connection.
+        </p>
+
+        <div className="w-full h-[1px] bg-off-white my-6 "></div>
+
+        <div className="col-span-full">
+          <h2 className="text-2xl">Latest Episode</h2>
+
+          <div className="w-full h-[25vh] relative flex flex-col justify-end">
+            <a href={rssData.href} target="_blank">
+              <Image
+                src="/img/pod-in-park.png"
+                fill
+                objectFit="cover"
+                objectPosition="bottom"
+                alt="existence podcast cover art"
+              />
+            </a>
+            <p className="text-3xl font-sultan font-bold text-title-red drop-shadow-[2px_2px_3px_#EF9F20] tracking-[1rem] absolute top-[10%] left-0 right-0 ">
+              Existence
+            </p>
+
+            <div className="relative bg-overlay-black opacity-80 w-full h-7 flex justify-center lg:hidden">
+              <p className="absolute z-50">{rssData.title}</p>
+            </div>
+          </div>
+        </div>
+        <h2 className="text-2xl col-span-full">Featured Episodes</h2>
+
+        <div className="relative w-full pt-[50%] ">
+          <Image
+            src="/img/sn-2.png"
+            fill
+            objectFit="cover"
+            alt=""
+            className="w-full h-full top-0 left-0 object-cover"
+          />
+        </div>
+
+        <div className="w-full relative pt-[50%]">
+          <Image
+            src="/img/healthy-relationships.png"
+            alt="profile"
+            objectFit="cover"
+            fill
+            className="w-full h-full top-0 left-0 object-cover"
+          />
+        </div>
+        <div className="w-full relative pt-[50%]">
+          <Image
+            src="/img/dd-laying.png"
+            fill
+            objectFit="cover"
+            alt=""
+            className="w-full h-full top-0 left-0 object-cover"
+          />
+        </div>
+        <div className="w-full relative pt-[50%]">
+          <Image
+            src="/img/controversial-opinions.png"
+            fill
+            objectFit="cover"
+            alt=""
+            className="w-full h-full top-0 left-0 object-cover"
+          />
+        </div>
+      </div>
+
       {/* Desktop */}
-      <div className="hidden md:flex justify-between my-8 mx-auto max-w-5xl px-8 xl:p-0">
-        <div className="font-unna flex flex-col w-9/12">
+      {/* <div className="hidden md:flex justify-between my-8 mx-auto max-w-5xl px-8 xl:p-0"> */}
+      {/* <div className="font-unna flex flex-col w-9/12">
           <p className="text-base">
             Conversations contemplating the essence of what it means to exist &
             pursue a life well-lived through discussions on love, death,
@@ -55,22 +127,22 @@ export default function Podcast({ rssData }) {
               <p className="text-base">{rssData.description}</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        {/* TODO: FIX */}
-        <SocialIcons vertical={true} />
-      </div>
+      {/* TODO: FIX */}
+      {/* <SocialIcons vertical={true} /> */}
+      {/* </div> */}
 
       {/* Mobile */}
-      <div className="mx-4 my-5 font-unna text-center md:hidden">
-        <p className="text-base max-w-xl m-auto">
+      {/* <div className="mx-4 my-5 font-unna text-center md:hidden"> */}
+      {/* <p className="text-base max-w-xl m-auto">
           Conversations contemplating the essence of what it means to exist &
           pursue a life well-lived through discussions on love, death,
           philosophy & connection.
-        </p>
+        </p> */}
 
-        {/* Latest Episodes */}
-        <h2 className="text-2xl">Latest Episode</h2>
+      {/* Latest Episodes */}
+      {/* <h2 className="text-2xl">Latest Episode</h2>
         <a href={rssData.href} target="_blank">
           <div className="w-full h-[25vh] relative flex flex-col justify-end max-w-xl m-auto">
             <Image
@@ -88,10 +160,10 @@ export default function Podcast({ rssData }) {
               <p className="absolute z-50">{rssData.title}</p>
             </div>
           </div>
-        </a>
+        </a> */}
 
-        {/* Featured Episode  */}
-        <h2 className="text-2xl">Featured Episodes</h2>
+      {/* Featured Episode  */}
+      {/* <h2 className="text-2xl">Featured Episodes</h2>
         <div className="max-w-xl m-auto">
           <div className="flex flex-col h-[35vh] gap-[2%]">
             <div className="w-full h-1/2 flex flex-row justify-around gap-[1%]">
@@ -128,8 +200,8 @@ export default function Podcast({ rssData }) {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       <Footer />
     </>
   );
