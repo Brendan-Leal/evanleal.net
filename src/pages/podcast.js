@@ -1,10 +1,13 @@
 import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
 import Logo from "@/components/Logo";
 import Head from "next/head";
 import Image from "next/image";
 const parseString = require("xml2js").parseString;
 
+export default function Podcast({ rssData }) {
+  console.log(rssData);
 export default function Podcast({ rssData }) {
   console.log(rssData);
   return (
