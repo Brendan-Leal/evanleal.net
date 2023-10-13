@@ -69,14 +69,14 @@ export default function Nav() {
             onMouseLeave={() => setSpotifyImg("/img/spotify-white.png")}
             className="hover:scale-150 transition-transform"
           >
-            <Link href="https://open.spotify.com/show/1lKHRsuf2qen2PlnkjEFNV?si=7c44632705e64f66">
+            <a href="https://open.spotify.com/show/1lKHRsuf2qen2PlnkjEFNV?si=7c44632705e64f66">
               <Image
                 src={spotifyImg}
                 width={25}
                 height={25}
                 alt="spotify icon"
               />
-            </Link>
+            </a>
           </li>
 
           {/* Youtube Logo Desktop */}
@@ -85,9 +85,9 @@ export default function Nav() {
             onMouseLeave={() => setYoutubeImg("/img/youtube-white.png")}
             className="hover:scale-150 transition-transform"
           >
-            <Link href="https://www.youtube.com/@ExistencePod">
+            <a href="https://www.youtube.com/@ExistencePod">
               <Image src={ytImg} width={25} height={25} alt="youtube icon" />
-            </Link>
+            </a>
           </li>
 
           {/* Apple Logo Desktop */}
@@ -96,9 +96,9 @@ export default function Nav() {
             onMouseLeave={() => setAppleImg("/img/apple-white.png")}
             className="hover:scale-150 transition-transform"
           >
-            <Link href="https://podcasts.apple.com/us/podcast/existence/id1636717921">
+            <a href="https://podcasts.apple.com/us/podcast/existence/id1636717921">
               <Image src={appleImg} width={25} height={25} alt="apple icon" />
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
