@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
 import Logo from "@/components/Logo";
 import Head from "next/head";
@@ -7,9 +6,6 @@ import Image from "next/image";
 const parseString = require("xml2js").parseString;
 
 export default function Podcast({ rssData }) {
-  console.log(rssData);
-export default function Podcast({ rssData }) {
-  console.log(rssData);
   return (
     <>
       <Head>
@@ -92,34 +88,40 @@ export default function Podcast({ rssData }) {
         <h2 className="text-2xl col-span-full lg:hidden">Featured Episodes</h2>
 
         <div className="relative w-full pt-[50%] lg:col-start-1 lg:col-end-3">
-          <Image
-            src="/img/sn-2.png"
-            fill
-            objectFit="cover"
-            alt="thumbnail season 2 trailer"
-            className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
-          />
+          <a target="_blank" href="https://www.youtube.com/watch?v=faiJN28OuJ8">
+            <Image
+              src="/img/sn-2.png"
+              fill
+              objectFit="cover"
+              alt="thumbnail season 2 trailer"
+              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
+            />
+          </a>
         </div>
 
         <div className="w-full relative pt-[50%] lg:col-start-3 lg:col-end-5">
-          <Image
-            src="/img/dd-laying.png"
-            fill
-            objectFit="cover"
-            alt="thumbnail death & disability"
-            className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
-          />
+          <a target="_blank" href="https://www.youtube.com/watch?v=AMNfiwlBmng">
+            <Image
+              src="/img/dd-laying.png"
+              fill
+              objectFit="cover"
+              alt="thumbnail death & disability"
+              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
+            />
+          </a>
         </div>
 
         <div className="w-full relative pt-[50%] lg:col-start-1 lg:col-end-3">
-          <Image
-            src="/img/healthy-relationships.png"
-            alt="thumbnail healthy relationships episode"
-            objectFit="cover"
-            objectPosition="top"
-            fill
-            className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
-          />
+          <a target="_blank" href="https://www.youtube.com/watch?v=1K6j4idinXM">
+            <Image
+              src="/img/healthy-relationships.png"
+              alt="thumbnail healthy relationships episode"
+              objectFit="cover"
+              objectPosition="top"
+              fill
+              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
+            />
+          </a>
         </div>
         <div className="w-full relative pt-[50%] lg:col-start-3 lg:col-end-5">
           <a target="_blank" href="https://www.youtube.com/watch?v=Z0m5jebl74o">
