@@ -1,10 +1,8 @@
 import Image from "next/image";
-import SocialIcons from "./SocialIcons";
 
 export default function Footer() {
   return (
     <footer className="font-unna py-3">
-      <SocialIcons />
       <div className="text-center py-4  flex flex-col">
         <p>
           Site made possible by&nbsp;
