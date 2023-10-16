@@ -34,6 +34,7 @@ module.exports = {
         "off-white": "#F4F4FD",
         "shadow-yellow": "#EF9F20",
         "overlay-black": "#0d0d0d",
+        "gray-accent": "#252A25",
       },
       backgroundImage: {
         "homepage-hero-mobile": "url('/img/pod-in-park-mobile.png')",
