@@ -3,9 +3,16 @@ import Heading from "@/components/Heading";
 import Logo from "@/components/Logo";
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 const parseString = require("xml2js").parseString;
 
 export default function Podcast({ rssData }) {
+  const [spotifyImg, setSpotifyImg] = useState("/img/spotify-white.png");
+
+  const [ytImg, setYoutubeImg] = useState("/img/youtube-white.png");
+
+  const [appleImg, setAppleImg] = useState("/img/apple-white.png");
+
   return (
     <>
       <Head>
@@ -64,25 +71,31 @@ export default function Podcast({ rssData }) {
 
         <div className="lg:flex flex-col justify-between items-end hidden">
           <Logo
-            src="/img/spotify-white.png"
+            src={spotifyImg}
             alt=""
             url="https://open.spotify.com/show/1lKHRsuf2qen2PlnkjEFNV?si=7c44632705e64f66"
             size={40}
             className="hover:scale-125 transition-transform "
+            onMouseEnter={() => setSpotifyImg("/img/spotify-color.png")}
+            onMouseLeave={() => setSpotifyImg("/img/spotify-white.png")}
           />
           <Logo
-            src="/img/youtube-white.png"
+            src={ytImg}
             alt=""
             url="https://www.youtube.com/@ExistencePod"
             size={40}
             className="hover:scale-125 transition-transform"
+            onMouseEnter={() => setYoutubeImg("/img/yt-full-color.png")}
+            onMouseLeave={() => setYoutubeImg("/img/youtube-white.png")}
           />
           <Logo
-            src="/img/apple-white.png"
+            src={appleImg}
             alt=""
             url="https://podcasts.apple.com/us/podcast/existence/id1636717921"
             size={40}
             className="hover:scale-125 transition-transform"
+            onMouseEnter={() => setAppleImg("/img/apple-full-color.png")}
+            onMouseLeave={() => setAppleImg("/img/apple-white.png")}
           />
         </div>
         <h2 className="text-2xl col-span-full lg:hidden">Featured Episodes</h2>
