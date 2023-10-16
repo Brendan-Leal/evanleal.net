@@ -71,7 +71,7 @@ export default function Contact() {
       />
 
       {showForm && (
-        <div className="font-unna text-base m-4 max-w-xl md:mx-auto">
+        <div className="font-unna text-base md:text-desktop-base m-4 max-w-xl md:mx-auto">
           <p>
             I offer fair, honest, and skillful work in podcast/video production
             and editing. Through my exceptional communication, reliability, and
@@ -141,10 +141,10 @@ export default function Contact() {
       )}
 
       {!showForm && (
-        <div className="m-4 font-unna">
+        <div className="m-4 font-unna text-center md:text-desktop-base">
           <div className="w-3/4 h-[1px] bg-off-white mx-auto my-4"></div>
           <p className="">
-            Your inquiry was sent successfully. I'll be in contact with you
+            Your inquiry was sent successfully. I&apos;ll be in contact with you
             soon!
           </p>
           <div className="w-3/4 h-[1px] bg-off-white mx-auto my-4"></div>
