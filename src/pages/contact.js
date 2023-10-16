@@ -1,10 +1,16 @@
-"use client";
-
 import Heading from "@/components/Heading";
 import Head from "next/head";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
+  const [captcha, setCaptcha] = useState(null);
+  const [formErr, setFormErr] = useState({
+    css: "",
+    errMsg: "",
+  });
+  const [showForm, setShowForm] = useState(true);
+
   // Get form logic
   const [query, setQuery] = useState({
     name: "",
@@ -24,15 +30,32 @@ export default function Contact() {
   const formSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    Object.entries(query).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
-    // TODO: have evan create get form account and give the endpoint url
-    fetch("https://getform.io/{your-form-endpoint}", {
-      method: "POST",
-      body: formData,
-    }).then(() => setQuery({ name: "", email: "", message: "" }));
+    if (captcha) {
+      const formData = new FormData();
+      console.log(formData);
+
+      Object.entries(query).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+
+      // TODO: have evan create get form account and give the endpoint url
+      // fetch("https://getform.io/f/75ea5186-b75a-4390-b741-097d2b647295", {
+      //   method: "POST",
+      //   body: formData,
+      // }).then(() => setQuery({ name: "", email: "", message: "" }));
+
+      setFormErr({
+        css: "hidden",
+        errMsg: "",
+      });
+
+      setShowForm(false);
+    } else {
+      setFormErr({
+        css: "block text-red-600",
+        errMsg: "* Please verify your human nature.",
+      });
+    }
   };
   return (
     <>
@@ -47,63 +70,86 @@ export default function Contact() {
         imgPosition="object-[bottom_right]"
       />
 
-      <div className="font-unna text-base m-4">
-        <p>
-          I offer fair, honest, and skillful work in podcast/video production
-          and editing. Through my exceptional communication, reliability, and
-          enthusiasm I aim to bring your visions to life. I look forward to
-          collaborating with you. Fill out the form below to get started.{" "}
-        </p>
-        <form
-          onSubmit={formSubmit}
-          className="grid grid-cols-2 grid-rows-[8] gap-6 mt-3"
-        >
-          <div className="col-span-2 flex flex-col gap-2">
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Name"
-              className="form-control text-black p-1"
-              value={query.name}
-              onChange={handleParam()}
-            />
-          </div>
+      {showForm && (
+        <div className="font-unna text-base m-4 max-w-xl md:mx-auto">
+          <p>
+            I offer fair, honest, and skillful work in podcast/video production
+            and editing. Through my exceptional communication, reliability, and
+            enthusiasm I aim to bring your visions to life. I look forward to
+            collaborating with you. Fill out the form below to get started.{" "}
+          </p>
+          <form
+            onSubmit={formSubmit}
+            className="grid grid-cols-2 auto-rows-auto gap-5 mt-3"
+          >
+            <div className="col-span-2 flex flex-col">
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Name"
+                className="form-control text-black p-1"
+                value={query.name}
+                onChange={handleParam()}
+              />
+            </div>
 
-          <div className="col-span-2 flex flex-col gap-2">
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Email"
-              className="form-control text-black p-1"
-              value={query.email}
-              onChange={handleParam()}
-            />
-          </div>
+            <div className="col-span-2 flex flex-col">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Email"
+                className="form-control text-black p-1"
+                value={query.email}
+                onChange={handleParam()}
+              />
+            </div>
 
-          <div className="col-span-2 flex flex-col gap-2">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Your Message"
-              required
-              className="form-control text-black p-1"
-              rows={5}
-              value={query.message}
-              onChange={handleParam()}
-            ></textarea>
-          </div>
-          <div className="w-full">
-            <button type="submit" className="bg-gray-accent w-full p-2">
-              Send
-            </button>
-          </div>
-        </form>
-      </div>
+            <div className="col-span-2 flex flex-col">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                required
+                className="form-control text-black p-1"
+                rows={5}
+                value={query.message}
+                onChange={handleParam()}
+              ></textarea>
+            </div>
+
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              className="col-span-2"
+              onChange={setCaptcha}
+            />
+            <div className="w-full">
+              <button
+                type="submit"
+                className="bg-gray-accent w-full md:w-2/3 p-2"
+              >
+                Send
+              </button>
+            </div>
+            <p className={formErr.css}>{formErr.errMsg}</p>
+          </form>
+        </div>
+      )}
+
+      {!showForm && (
+        <div className="m-4 font-unna">
+          <div className="w-3/4 h-[1px] bg-off-white mx-auto my-4"></div>
+          <p className="">
+            Your inquiry was sent successfully. I'll be in contact with you
+            soon!
+          </p>
+          <div className="w-3/4 h-[1px] bg-off-white mx-auto my-4"></div>
+        </div>
+      )}
     </>
   );
 }
