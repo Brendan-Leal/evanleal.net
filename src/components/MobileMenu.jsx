@@ -5,27 +5,29 @@ import SocialIcons from "./SocialIcons";
 import { useContext } from "react";
 import { MenuContext } from "@/pages/_app";
 
-export default function MobileMenu({ toggleFade }) {
+export default function MobileMenu() {
   const menu = useContext(MenuContext);
+  const toggle = () => {
+    menu.setVisible(!menu.visible);
+  };
 
   return (
-    <div className="bg-off-white w-screen h-screen text-cinema-black flex flex-col justify-between ">
+    <div
+      className={`bg-off-white w-screen h-screen text-cinema-black flex flex-col justify-between translate-x-full md:hidden ${
+        menu.visible ? "animate-slide-in-right" : "hidden"
+      } `}
+    >
       <div
-        onClick={menu.toggleMenu}
+        onClick={toggle}
         className="absolute w-[40px] h-[40px] right-4 top-4 md:hidden"
       >
-        <Image src="/img/dismiss.png" alt="" fill={true} />
+        <Image src="/img/dismiss.png" alt="" fill={true} priority />
       </div>
+
       {/* Page links */}
       <ul className="text-2xl font-unna text-center flex flex-col gap-14 pt-[20dvh]">
         {NAV_LINKS.map((link) => (
-          <li
-            key={link.key}
-            onClick={() => {
-              menu.toggleMenu();
-              toggleFade();
-            }}
-          >
+          <li key={link.key} onClick={toggle}>
             <Link href={`${link.path}`}>{link.name}</Link>
           </li>
         ))}
