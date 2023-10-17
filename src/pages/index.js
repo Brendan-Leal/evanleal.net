@@ -3,8 +3,6 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import { useContext } from "react";
 import { MenuContext } from "@/pages/_app";
-import { Transition } from "@headlessui/react";
-import { TRANSITION_TIME_CSS } from "../../constants/transitionTime";
 import SocialIcons from "@/components/SocialIcons";
 
 export default function Home() {
