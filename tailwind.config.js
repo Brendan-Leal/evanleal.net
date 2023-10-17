@@ -16,6 +16,20 @@ module.exports = {
       "5xl": "76.3px",
     },
     extend: {
+      keyframes: {
+        "fade-out": {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+        "slide-in-right": {
+          "0%": { transform: "translateX(100vw)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        "fade-out": "fade-out 250ms ease-in-out forwards",
+        "slide-in-right": "slide-in-right 250ms ease-in-out 250ms forwards",
+      },
       fontSize: {
         "desktop-base": "18px",
         "desktop-md": "25.45px",
