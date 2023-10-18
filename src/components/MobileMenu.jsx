@@ -13,8 +13,8 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`bg-off-white w-screen h-screen text-cinema-black flex flex-col justify-between translate-x-full md:hidden ${
-        menu.visible ? "animate-slide-in-right" : "hidden"
+      className={`bg-off-white w-screen h-[100dvh] text-cinema-black flex flex-col justify-between translate-x-full md:hidden will-change-transform ${
+        menu.visible ? "animate-slide-in-right " : "hidden"
       } `}
     >
       <div
@@ -33,9 +33,9 @@ export default function MobileMenu() {
         ))}
         {/* Social Icon List */}
       </ul>
-      <div className="pb-8">
+      {/* <div className="pb-4">
         <SocialIcons dark="true" showFullSet={true} />
-      </div>
+      </div> */}
     </div>
   );
 }
