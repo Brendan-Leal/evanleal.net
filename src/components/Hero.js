@@ -24,15 +24,15 @@ export default function Hero() {
           alt="Evan outside podcasting in the park"
         />
 
-        <div className="z-0 w-full h-screen absolute bg-gradient-to-b from-overlay-black top-0 opacity-[0.60]"></div>
+        <div className="z-0 w-full h-[100dvh] absolute bg-gradient-to-b from-overlay-black top-0 opacity-[0.60]"></div>
 
-        <div className="flex flex-col justify-start items-center row-start-2">
-          <h1 className="text-5xl md:text-desktop-3xl font-sultan font-bold text-title-red drop-shadow-[2px_2px_3px_#EF9F20] tracking-[2rem] lg:tracking-[2.5rem] ">
+        <div className="flex flex-col justify-end items-center row-start-2">
+          <h1 className="pl-8 md:p-0 text-5xl md:text-desktop-3xl font-sultan font-bold text-title-red drop-shadow-[2px_2px_3px_#EF9F20] tracking-[2rem] lg:tracking-[2.5rem] ">
             Evan <br className="md:hidden" /> Leal
           </h1>
         </div>
 
-        <p className="relative font-unna text-xl md:text-desktop-xl row-start-3 mx-auto">
+        <p className="relative font-unna text-xl md:text-desktop-xl row-start-3 flex justify-center">
           Podcast Host. Producer.
         </p>
       </div>
