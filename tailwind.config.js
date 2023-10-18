@@ -22,13 +22,13 @@ module.exports = {
           "100%": { opacity: 0 },
         },
         "slide-in-right": {
-          "0%": { transform: "translateX(100vw)" },
+          "0%": { transform: "translateX(100dvw)" },
           "100%": { transform: "translateX(0)" },
         },
       },
       animation: {
-        "fade-out": "fade-out 250ms ease-in-out forwards",
-        "slide-in-right": "slide-in-right 250ms ease-in-out 250ms forwards",
+        "fade-out": "fade-out 250ms linear forwards",
+        "slide-in-right": "slide-in-right 250ms linear 300ms forwards",
       },
       fontSize: {
         "desktop-base": "18px",
