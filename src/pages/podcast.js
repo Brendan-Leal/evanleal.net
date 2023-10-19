@@ -23,12 +23,13 @@ export default function Podcast({ rssData }) {
         pageTitle="Existence Podcast"
         headingText="Existence"
         bgImg="/img/podcast-header-img.png"
-        imgPosition="object-[80%_top]"
+        imgPosition="object-[80%_top] object-cover"
         alt="Evan podcasting"
+        headingTextPosition="md:flex md:h-full md:justify-center md:items-center "
       />
 
       <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-auto font-unna p-4 text-center gap-4 lg:gap-5 max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl lg:text-left">
-        <p className="text-base lg:text-desktop-md col-span-full lg:col-span-3">
+        <p className="text-base lg:text-desktop-md md:text-desktop-base col-span-full lg:col-span-3">
           Conversations contemplating the essence of what it means to exist &
           pursue a life well-lived through discussions on love, death,
           philosophy & connection.

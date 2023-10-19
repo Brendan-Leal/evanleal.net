@@ -13,7 +13,7 @@ export default function About() {
         headingText="About Evan"
         bgImg="/img/about-heading-img.png"
         alt="Evan in a bed of flowers"
-        imgPosition="object-bottom"
+        imgPosition="object-bottom object-cover"
       />
 
       <div className="font-unna mx-4 md:mx-20 my-2 md:my-6 text-center md:text-left ">
