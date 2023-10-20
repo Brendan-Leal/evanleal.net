@@ -16,63 +16,54 @@ export default function About() {
         imgPosition="object-bottom object-cover"
       />
 
-      <div className="font-unna mx-4 md:mx-20 my-2 md:my-6 text-center md:text-left ">
-        <h6 className="text-lg md:text-desktop-lg my-3 lg:text-desktop-xl">
-          Traveler. Thinker. Creative. Veteran.
-        </h6>
-        <div className="flex gap-6 ">
-          <div className="hidden md:block relative w-[400px] md:h-[250px]">
-            <Image
-              src="/img/train-ride.png"
-              fill={true}
-              objectFit="cover"
-              objectPosition="right"
-              alt="evan and his partner on a train ride"
-            />
-          </div>
-          <p className="text-base md:text-desktop-base md:w-2/3">
-            I simply love genuine people and engaging conversation. So whether
-            you&apos;re a guest on the podcast, seeking a skillful editor, or
-            just looking to connect, my interests lie in collaborating with
-            friendly, like-minded people in pursuit of producing beautiful and
-            captivating work. Over the years I&apos;ve fostered the knowledge,
-            expertise & equipment with the purpose of crafting high quality,
-            meaningful and artistically distinct content. Experienced in
-            directing, editing, sounds design and overall podcast & film
-            production.
-          </p>
+      <div className="font-unna text-left max-w-md mx-auto p-4 my-2 md:my-6  md:max-w-3xl grid grid-cols-1 auto-rows-auto ">
+        <div className="w-fit">
+          <h6 className="text-lg md:text-desktop-lg lg:text-desktop-xl">
+            <span className="text-shadow-yellow">Traveler</span>
+            <span className="text-title-red">.</span>
+            <span className="text-shadow-yellow"> Thinker</span>
+            <span className="text-title-red">.</span>
+            <span className="text-shadow-yellow"> Creative</span>
+            <span className="text-title-red">.</span>
+            <span className="text-shadow-yellow"> Veteran</span>
+            <span className="text-title-red">.</span>
+          </h6>
         </div>
 
-        <h6 className="text-lg md:text-desktop-lg my-3 lg:text-desktop-xl">
-          Host. Editor. Director. Producer.
-        </h6>
-        <div className="flex gap-6 ">
-          {/* TODO: get content */}
-          <p className="text-base md:text-desktop-base md:w-2/3 text-red-400">
-            Lorem ipsum dolor sit amet consectetur. Convallis hac massa amet
-            facilisis id vel pulvinar. Massa odio egestas consectetur nulla
-            nullam vitae euismod sed. Ac rhoncus at purus viverra semper.
-            Pretium nulla quis id nisl hendrerit. Tellus sagittis aliquet ut
-            vitae urna accumsan habitant dis natoque.
-          </p>
+        <p className="text-base md:text-desktop-base mb-2 md:mb-4">
+          I simply love genuine people and engaging conversation. So whether
+          you&apos;re a guest on the podcast, seeking a skillful editor, or just
+          looking to connect, my interests lie in collaborating with friendly,
+          like-minded people in pursuit of producing beautiful and captivating
+          work. Over the years I&apos;ve fostered the knowledge, expertise &
+          equipment with the purpose of crafting high quality, meaningful and
+          artistically distinct content. Experienced in directing, editing,
+          sounds design and overall podcast & film production.
+        </p>
 
-          <div className="hidden md:block relative w-[400px] md:h-[250px]">
-            <Image
-              src="/img/evan-cross-arm.png"
-              fill={true}
-              objectFit="cover"
-              alt="evan and his partner on a train ride"
-            />
-          </div>
+        <div className="w-fit">
+          <h6 className="text-lg md:text-desktop-lg lg:text-desktop-xl">
+            <span> Host</span>
+            <span className="text-title-red">.</span>
+            <span> Editor</span>
+            <span className="text-title-red">.</span>
+            <span> Director</span>
+            <span className="text-title-red">.</span>
+            <span> Producer</span>
+            <span className="text-title-red">.</span>
+          </h6>
+          <div className="bg-shadow-yellow h-[1px] mb-2 md:mb-4"></div>
         </div>
+
+        {/* TODO: get content */}
+        <p className="text-base md:text-desktop-base">
+          Lorem ipsum dolor sit amet consectetur. Convallis hac massa amet
+          facilisis id vel pulvinar. Massa odio egestas consectetur nulla nullam
+          vitae euismod sed. Ac rhoncus at purus viverra semper. Pretium nulla
+          quis id nisl hendrerit. Tellus sagittis aliquet ut vitae urna accumsan
+          habitant dis natoque.
+        </p>
       </div>
     </>
   );
 }
-
-// {
-//   /* <div className="w-[423px] h-[360px] relative">
-//       <Image
-//       />
-//     </div> */
-// }
