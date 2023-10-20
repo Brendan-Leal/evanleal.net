@@ -11,7 +11,6 @@ export default function Contact() {
   });
   const [showForm, setShowForm] = useState(true);
 
-  // Get form logic
   const [query, setQuery] = useState({
     name: "",
     email: "",
@@ -26,7 +25,7 @@ export default function Contact() {
       [name]: value,
     }));
   };
-  // Form Submit function
+
   const formSubmit = (e) => {
     e.preventDefault();
 
@@ -38,11 +37,10 @@ export default function Contact() {
         formData.append(key, value);
       });
 
-      // TODO: have evan create get form account and give the endpoint url
-      // fetch("https://getform.io/f/75ea5186-b75a-4390-b741-097d2b647295", {
-      //   method: "POST",
-      //   body: formData,
-      // }).then(() => setQuery({ name: "", email: "", message: "" }));
+      fetch(process.env.GET_FORM_URL, {
+        method: "POST",
+        body: formData,
+      }).then(() => setQuery({ name: "", email: "", message: "" }));
 
       setFormErr({
         css: "hidden",
@@ -57,6 +55,7 @@ export default function Contact() {
       });
     }
   };
+
   return (
     <>
       <Head>
