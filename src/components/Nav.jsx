@@ -1,4 +1,3 @@
-import MobileMenu from "./MobileMenu";
 import { NAV_LINKS } from "../../constants/navLink";
 import Link from "next/link";
 import Image from "next/image";

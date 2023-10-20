@@ -18,7 +18,7 @@ export default function Footer() {
             className="inline"
           />
         </p>
-        <p>&copy; copyright 2023</p>
+        <p>&copy; copyright {new Date().getFullYear()}</p>
       </div>
     </footer>
   );
