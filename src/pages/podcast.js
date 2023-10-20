@@ -45,9 +45,8 @@ export default function Podcast({ rssData }) {
               <Image
                 src="/img/pod-in-park.png"
                 fill
-                objectFit="cover"
-                objectPosition="bottom right"
                 alt="existence podcast cover art"
+                className="object-cover object-right-bottom"
               />
               <p className="text-3xl md:text-4xl lg:text-desktop-lg font-sultan font-bold text-title-red drop-shadow-[2px_2px_3px_#EF9F20] tracking-[1rem] md:tracking-[2rem] lg:tracking-[.5rem] absolute top-[10%] left-0 right-0 mx-auto text-center">
                 Existence
@@ -106,9 +105,8 @@ export default function Podcast({ rssData }) {
             <Image
               src="/img/sn-2.png"
               fill
-              objectFit="cover"
               alt="thumbnail season 2 trailer"
-              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
+              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform object-cover"
             />
           </a>
         </div>
@@ -118,9 +116,8 @@ export default function Podcast({ rssData }) {
             <Image
               src="/img/dd-laying.png"
               fill
-              objectFit="cover"
               alt="thumbnail death & disability"
-              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
+              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform object-cover"
             />
           </a>
         </div>
@@ -130,10 +127,8 @@ export default function Podcast({ rssData }) {
             <Image
               src="/img/healthy-relationships.png"
               alt="thumbnail healthy relationships episode"
-              objectFit="cover"
-              objectPosition="top"
               fill
-              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
+              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform object-cover object-top"
             />
           </a>
         </div>
@@ -142,10 +137,8 @@ export default function Podcast({ rssData }) {
             <Image
               src="/img/controversial-opinions.png"
               fill
-              objectFit="cover"
-              objectPosition="top"
               alt="thumbnail controversial opinions episode"
-              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform"
+              className="w-full h-full top-0 left-0 lg:hover:scale-105 lg:transition-transform object-cover object-top"
             />
           </a>
         </div>
@@ -162,6 +155,7 @@ export async function getServerSideProps() {
   const res = await fetch(RSS_URL);
   const xmlAsString = await res.text();
   let data = {};
+
   parseString(xmlAsString, (err, result) => {
     if (err) {
       console.error(err);
