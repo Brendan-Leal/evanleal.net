@@ -11,7 +11,6 @@ export default function Hamburger() {
     <div
       className={`absolute z-50 right-0 pr-4 pt-12 flex flex-col items-end gap-1 md:hidden ${
         !menu.visible ? "" : "animate-fade-out"
-        // !menu.visible ? "" : ""
       }`}
       onClick={toggle}
     >
