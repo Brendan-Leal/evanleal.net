@@ -1,13 +1,9 @@
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Head from "next/head";
-import { useContext } from "react";
-import { MenuContext } from "@/pages/_app";
 import SocialIcons from "@/components/SocialIcons";
 
 export default function Home() {
-  const menu = useContext(MenuContext);
-
   return (
     <>
       <Head>
