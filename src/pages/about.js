@@ -18,15 +18,17 @@ export default function About() {
       <div className="font-unna text-left max-w-md mx-auto p-4 my-2 md:my-6  md:max-w-3xl grid grid-cols-1 auto-rows-auto ">
         <div className="w-fit">
           <h6 className="text-lg md:text-desktop-lg lg:text-desktop-xl">
-            <span className="text-shadow-yellow">Traveler</span>
-            <span className="text-title-red">.</span>
-            <span className="text-shadow-yellow"> Thinker</span>
-            <span className="text-title-red">.</span>
-            <span className="text-shadow-yellow"> Creative</span>
-            <span className="text-title-red">.</span>
-            <span className="text-shadow-yellow"> Veteran</span>
+            Traveler
+            <span className="text-title-red">. </span>
+            Thinker
+            <span className="text-title-red">. </span>
+            Creative
+            <span className="text-title-red">. </span>
+            Veteran
             <span className="text-title-red">.</span>
           </h6>
+
+          <div className="bg-shadow-yellow h-[1px] mb-2 md:mb-4"></div>
         </div>
 
         <p className="text-base md:text-desktop-base mb-2 md:mb-4">
@@ -42,13 +44,13 @@ export default function About() {
 
         <div className="w-fit">
           <h6 className="text-lg md:text-desktop-lg lg:text-desktop-xl">
-            <span> Host</span>
-            <span className="text-title-red">.</span>
-            <span> Editor</span>
-            <span className="text-title-red">.</span>
-            <span> Director</span>
-            <span className="text-title-red">.</span>
-            <span> Producer</span>
+            Host
+            <span className="text-title-red">. </span>
+            Editor
+            <span className="text-title-red">. </span>
+            Director
+            <span className="text-title-red">. </span>
+            Producer
             <span className="text-title-red">.</span>
           </h6>
           <div className="bg-shadow-yellow h-[1px] mb-2 md:mb-4"></div>
