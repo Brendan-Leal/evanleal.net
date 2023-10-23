@@ -35,7 +35,7 @@ export default function Podcast({ rssData }) {
           philosophy & connection.
         </p>
 
-        <div className="hidden lg:block w-full h-[1px] bg-off-white col-span-3"></div>
+        <div className="hidden lg:block w-full h-[1px] bg-title-red col-span-3"></div>
 
         <div className="col-span-full lg:col-span-1 lg:row-start-3">
           <h2 className="text-2xl lg:hidden">Latest Episode</h2>
