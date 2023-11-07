@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 :root {
-    --cinema-black: #080D06;
-    --off-white: #F4F4FD;
+  --cinema-black: #080d06;
+  --off-white: #f4f4fd;
 }
 
-
 body {
-    background-color: var(--cinema-black);
-    color: var(--off-white);
+  background-color: var(--cinema-black);
+  color: var(--off-white);
 }

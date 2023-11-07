@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     fontSize: {
@@ -16,6 +16,20 @@ module.exports = {
       "5xl": "76.3px",
     },
     extend: {
+      keyframes: {
+        "fade-out": {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+        "slide-in-right": {
+          "0%": { transform: "translateX(100dvw)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        "fade-out": "fade-out 250ms linear forwards",
+        "slide-in-right": "slide-in-right 250ms linear 300ms forwards",
+      },
       fontSize: {
         "desktop-base": "18px",
         "desktop-md": "25.45px",
@@ -25,8 +39,8 @@ module.exports = {
         "desktop-3xl": "101.75px",
       },
       fontFamily: {
-        sultan: ['var(--font-sultan)'],
-        unna: ["var(--font-unna)"]
+        sultan: ["var(--font-sultan)"],
+        unna: ["var(--font-unna)"],
       },
       colors: {
         "cinema-black": "#080D06",
@@ -34,12 +48,13 @@ module.exports = {
         "off-white": "#F4F4FD",
         "shadow-yellow": "#EF9F20",
         "overlay-black": "#0d0d0d",
+        "gray-accent": "#252A25",
       },
       backgroundImage: {
         "homepage-hero-mobile": "url('/img/pod-in-park-mobile.png')",
-        "homepage-hero": "url('/img/pod-in-park.png')"
-      }
-    }
+        "homepage-hero": "url('/img/pod-in-park.png')",
+      },
+    },
   },
   plugins: [],
-}
+};
