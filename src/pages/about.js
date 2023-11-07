@@ -54,9 +54,10 @@ export default function About() {
 
         {/* TODO: get content */}
         <p className="text-base md:text-desktop-base">
-          Over the years I've fostered the knowledge, expertise, and equipment
-          for the purpose of crafting meaningful and artistically distinct
-          content. I am experienced in overall podcast and film production.
+          Over the years I&apos;ve fostered the knowledge, expertise, and
+          equipment for the purpose of crafting meaningful and artistically
+          distinct content. I am experienced in overall podcast and film
+          production.
         </p>
       </div>
     </>
