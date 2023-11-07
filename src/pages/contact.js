@@ -72,10 +72,8 @@ export default function Contact() {
       {showForm && (
         <div className="font-unna text-base md:text-desktop-base m-4 max-w-xl md:mx-auto">
           <p>
-            I offer fair, honest, and skillful work in podcast/video production
-            and editing. Through my exceptional communication, reliability, and
-            enthusiasm I aim to bring your visions to life. I look forward to
-            collaborating with you. Fill out the form below to get started.{" "}
+            I look forward to collaborating in any way I can! Fill out the form
+            below to get started.
           </p>
           <form
             onSubmit={formSubmit}

@@ -32,14 +32,10 @@ export default function About() {
         </div>
 
         <p className="text-base md:text-desktop-base mb-2 md:mb-4">
-          I simply love genuine people and engaging conversation. So whether
-          you&apos;re a guest on the podcast, seeking a skillful editor, or just
-          looking to connect, my interests lie in collaborating with friendly,
-          like-minded people in pursuit of producing beautiful and captivating
-          work. Over the years I&apos;ve fostered the knowledge, expertise &
-          equipment with the purpose of crafting high quality, meaningful and
-          artistically distinct content. Experienced in directing, editing,
-          sounds design and overall podcast & film production.
+          My interest lies in authentic connections and meaningful conversation.
+          Whether through podcasting, editing, or collaboration I aim to partner
+          with friendly, like-minded people in the pursuit of producing
+          beautiful and captivating work.
         </p>
 
         <div className="w-fit">
@@ -58,11 +54,10 @@ export default function About() {
 
         {/* TODO: get content */}
         <p className="text-base md:text-desktop-base">
-          Lorem ipsum dolor sit amet consectetur. Convallis hac massa amet
-          facilisis id vel pulvinar. Massa odio egestas consectetur nulla nullam
-          vitae euismod sed. Ac rhoncus at purus viverra semper. Pretium nulla
-          quis id nisl hendrerit. Tellus sagittis aliquet ut vitae urna accumsan
-          habitant dis natoque.
+          Over the years I&apos;ve fostered the knowledge, expertise, and
+          equipment for the purpose of crafting meaningful and artistically
+          distinct content. I am experienced in overall podcast and film
+          production.
         </p>
       </div>
     </>

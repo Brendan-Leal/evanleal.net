@@ -11,9 +11,21 @@ export default function Home() {
       </Head>
       <div className="relative">
         <Hero />
-        <video className="w-full h-[100dvh]">
-          <source src="/videos/mobile-trailer.mp4" />
-        </video>
+        <div className="relative pb-[177.77%] md:hidden">
+          <iframe
+            src="https://player.vimeo.com/video/878767356?h=969f89f8ac"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          ></iframe>
+        </div>
+
+        <div className="relative pb-[40%] hidden md:block">
+          <iframe
+            src="https://player.vimeo.com/video/878695968?h=d3e0e46ed4"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          ></iframe>
+        </div>
 
         {/* Quote  */}
         <div className="font-unna text-base text-center flex items-center justify-center gap-2 my-6 px-12">
