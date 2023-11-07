@@ -11,6 +11,7 @@ const sultan = localFont({
 });
 
 import { Unna } from "next/font/google";
+import Head from "next/head";
 const unna = Unna({
   subsets: ["latin"],
   variable: "--font-unna",
@@ -23,21 +24,26 @@ export default function App({ Component, pageProps }) {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className={`${sultan.variable} ${unna.variable}`}>
-      <MenuContext.Provider
-        value={{
-          visible,
-          setVisible,
-        }}
-      >
-        <Hamburger />
-        <MobileMenu />
-        <Nav />
+    <>
+      <Head>
+        <link rel="shortcut icon" href="/img/favicon.ico" />
+      </Head>
+      <div className={`${sultan.variable} ${unna.variable}`}>
+        <MenuContext.Provider
+          value={{
+            visible,
+            setVisible,
+          }}
+        >
+          <Hamburger />
+          <MobileMenu />
+          <Nav />
 
-        <main className={`${visible ? "animate-fade-out hidden" : ""}`}>
-          <Component {...pageProps} />
-        </main>
-      </MenuContext.Provider>
-    </div>
+          <main className={`${visible ? "animate-fade-out hidden" : ""}`}>
+            <Component {...pageProps} />
+          </main>
+        </MenuContext.Provider>
+      </div>
+    </>
   );
 }
