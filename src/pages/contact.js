@@ -31,13 +31,12 @@ export default function Contact() {
 
     if (captcha) {
       const formData = new FormData();
-      console.log(formData);
 
       Object.entries(query).forEach(([key, value]) => {
         formData.append(key, value);
       });
 
-      fetch(process.env.GET_FORM_URL, {
+      fetch(process.env.NEXT_PUBLIC_GET_FORM_URL, {
         method: "POST",
         body: formData,
       }).then(() => setQuery({ name: "", email: "", message: "" }));
