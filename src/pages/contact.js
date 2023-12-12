@@ -1,57 +1,71 @@
 import Heading from "@/components/Heading";
 import Head from "next/head";
-import { useState } from "react";
+import { useState, createRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
-  const [captcha, setCaptcha] = useState(null);
-  const [formErr, setFormErr] = useState({
-    css: "",
-    errMsg: "",
-  });
+  const [token, setToken] = useState(null);
+  const [postSubmissionMessage, setPostSubmissionMessage] = useState("");
+  const recaptchaRef = createRef(null);
   const [showForm, setShowForm] = useState(true);
-
+  const [isFormDisabled, setIsFromDisabled] = useState(false);
   const [query, setQuery] = useState({
     name: "",
     email: "",
   });
 
-  // Update inputs value
   const handleParam = () => (e) => {
     const name = e.target.name;
     const value = e.target.value;
+
     setQuery((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  const formSubmit = (e) => {
-    e.preventDefault();
+  const verifyCaptcha = async () => {
+    const res = await fetch("/api/form/validate", {
+      method: "POST",
+      body: JSON.stringify({ token }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
 
-    if (captcha) {
+    return res.success;
+  };
+
+  const formSubmit = async (e) => {
+    e.preventDefault();
+    setIsFromDisabled(true);
+    const isValidToken = await verifyCaptcha();
+
+    if (isValidToken) {
       const formData = new FormData();
 
       Object.entries(query).forEach(([key, value]) => {
         formData.append(key, value);
       });
 
-      fetch(process.env.NEXT_PUBLIC_GET_FORM_URL, {
+      await fetch(process.env.NEXT_PUBLIC_GET_FORM_URL, {
         method: "POST",
         body: formData,
-      }).then(() => setQuery({ name: "", email: "", message: "" }));
-
-      setFormErr({
-        css: "hidden",
-        errMsg: "",
-      });
+      })
+        .then(() => setQuery({ name: "", email: "", message: "" }))
+        .catch((err) => console.log(err));
 
       setShowForm(false);
+      setPostSubmissionMessage(
+        "Your inquiry was sent successfully. I'll be in contact with you soon!"
+      );
     } else {
-      setFormErr({
-        css: "block text-red-600",
-        errMsg: "* Please verify your human nature.",
-      });
+      setShowForm(false);
+      setPostSubmissionMessage(
+        "Sorry, something went wrong please try again later."
+      );
     }
   };
 
@@ -85,9 +99,10 @@ export default function Contact() {
                 name="name"
                 required
                 placeholder="Name"
-                className="form-control text-black p-1"
+                className="form-control text-black p-1 disabled:opacity-70 disabled:bg-white disabled:cursor-not-allowed"
                 value={query.name}
                 onChange={handleParam()}
+                disabled={isFormDisabled}
               />
             </div>
 
@@ -98,9 +113,10 @@ export default function Contact() {
                 name="email"
                 required
                 placeholder="Email"
-                className="form-control text-black p-1"
+                className="form-control text-black p-1 disabled:opacity-70 disabled:bg-white disabled:cursor-not-allowed"
                 value={query.email}
                 onChange={handleParam()}
+                disabled={isFormDisabled}
               />
             </div>
 
@@ -111,27 +127,31 @@ export default function Contact() {
                 name="message"
                 placeholder="Your Message"
                 required
-                className="form-control text-black p-1"
+                className="form-control text-black p-1 disabled:opacity-70 disabled:bg-white disabled:cursor-not-allowed"
                 rows={5}
                 value={query.message}
                 onChange={handleParam()}
+                disabled={isFormDisabled}
               ></textarea>
             </div>
 
-            <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-              className="col-span-2"
-              onChange={setCaptcha}
-            />
-            <div className="w-full">
+            <div>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={(token) => setToken(token)}
+              />
+            </div>
+
+            <div className="w-full row-start-5">
               <button
                 type="submit"
-                className="bg-gray-accent w-full md:w-2/3 p-2"
+                className="bg-gray-accent w-full md:w-2/3 p-2 hover:scale-110 transition-transform disabled:bg-gray-700 disabled:cursor-not-allowed disabled:hover:scale-100"
+                disabled={isFormDisabled}
               >
                 Send
               </button>
             </div>
-            <p className={formErr.css}>{formErr.errMsg}</p>
           </form>
         </div>
       )}
@@ -139,10 +159,7 @@ export default function Contact() {
       {!showForm && (
         <div className="m-4 font-unna text-center md:text-desktop-base">
           <div className="w-3/4 h-[1px] bg-off-white mx-auto my-4"></div>
-          <p className="">
-            Your inquiry was sent successfully. I&apos;ll be in contact with you
-            soon!
-          </p>
+          <p className="">{postSubmissionMessage}</p>
           <div className="w-3/4 h-[1px] bg-off-white mx-auto my-4"></div>
         </div>
       )}
