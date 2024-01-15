@@ -32,10 +32,7 @@ export default function About() {
         </div>
 
         <p className="text-base md:text-desktop-base mb-2 md:mb-4">
-          My interest lies in authentic connections and meaningful conversation.
-          Whether through podcasting, editing, or collaboration I aim to partner
-          with friendly, like-minded people in the pursuit of producing
-          beautiful and captivating work.
+          After five years of service in the United States Marine Corps and extensive travel experience throughout the world, I&apos;ve learned that my true interests lie in authentic connections and meaningful conversation. Whether through filmmaking, podcasting, editing, or collaboration I aim to partner with friendly, like-minded people in the pursuit of producing beautiful and captivating work.
         </p>
 
         <div className="w-fit">
@@ -52,12 +49,8 @@ export default function About() {
           <div className="bg-shadow-yellow h-[1px] mb-2 md:mb-4"></div>
         </div>
 
-        {/* TODO: get content */}
         <p className="text-base md:text-desktop-base">
-          Over the years I&apos;ve fostered the knowledge, expertise, and
-          equipment for the purpose of crafting meaningful and artistically
-          distinct content. I am experienced in overall podcast and film
-          production.
+          As an emerging creative, I've dedicated myself to cultivating the knowledge, expertise, and equipment necessary for the purpose of crafting meaningful and artistically distinct content. Pursuing my lifelong passion for podcasting and film production, I understand what&apos;s required to make things happen. If you're on the lookout for a committed and imaginative professional to be part of your team, let's collaborate and create something cool together!
         </p>
       </div>
     </>
