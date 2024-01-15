@@ -33,7 +33,7 @@ export default function Hero() {
         </div>
 
         <p className="relative font-unna text-xl md:text-desktop-xl row-start-3 flex justify-center">
-          Podcast Host. Producer.
+          Filmmaker. Podcast Producer.
         </p>
       </div>
     </>
