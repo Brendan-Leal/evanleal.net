@@ -50,7 +50,7 @@ export default function About() {
         </div>
 
         <p className="text-base md:text-desktop-base">
-          As an emerging creative, I've dedicated myself to cultivating the knowledge, expertise, and equipment necessary for the purpose of crafting meaningful and artistically distinct content. Pursuing my lifelong passion for podcasting and film production, I understand what&apos;s required to make things happen. If you're on the lookout for a committed and imaginative professional to be part of your team, let's collaborate and create something cool together!
+          As an emerging creative, I&apos;ve dedicated myself to cultivating the knowledge, expertise, and equipment necessary for the purpose of crafting meaningful and artistically distinct content. Pursuing my lifelong passion for podcasting and film production, I understand what&apos;s required to make things happen. If you&apos;re on the lookout for a committed and imaginative professional to be part of your team, let&apos;s collaborate and create something cool together!
         </p>
       </div>
     </>
